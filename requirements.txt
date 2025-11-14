@@ -14,3 +14,4 @@ PyMySQL==1.1.0
 cryptography==41.0.7
 pyotp==2.8.0
 email-validator==2.1.0.post1
+setuptools
