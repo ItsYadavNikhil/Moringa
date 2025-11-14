@@ -1278,12 +1278,19 @@ def export_orders():
         
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+#OLD CODE BY HUZAIFA SIR
+        
+# def init_db():
+#     """Initialize the database with tables and default admin user."""
+#     with app.app_context():
+#         db.create_all()
 
+#NEW CODE BY NIKHIL
+@app.cli.command("init-db")
 def init_db():
     """Initialize the database with tables and default admin user."""
     with app.app_context():
         db.create_all()
-        
         # Add new columns to Customer table if they don't exist
         from sqlalchemy import inspect
         inspector = inspect(db.engine)
