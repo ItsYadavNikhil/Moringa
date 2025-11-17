@@ -124,6 +124,7 @@ class CustomerSecurity(db.Model):
     last_mfa_used = db.Column(db.DateTime, nullable=True)
 
 class Order(db.Model):
+    __tablename__ = 'orders'  #Added by Nizam Sir
     id = db.Column(db.Integer, primary_key=True)
     order_id = db.Column(db.String(100), unique=True, nullable=False)
     razorpay_order_id = db.Column(db.String(100), nullable=True)
